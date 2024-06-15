@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6cbcno43nfj2"]
+
+[ext_resource type="Script" path="res://Scripts/Sponge.gd" id="1_7uuge"]
+[ext_resource type="Script" path="res://Scripts/PickScript.gd" id="2_2t34u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_efvx2"]
+size = Vector3(2.05, 0.35, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pjlar"]
+size = Vector3(2, 0.3, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_44sxv"]
+size = Vector3(2, 0.3, 1)
+
+[node name="Sponge" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 4
+lock_rotation = true
+max_contacts_reported = 10
+contact_monitor = true
+script = ExtResource("1_7uuge")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_efvx2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_pjlar")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_44sxv")
+skeleton = NodePath("")
+
+[node name="PickNode" type="Node" parent="." node_paths=PackedStringArray("selfRigidBody")]
+script = ExtResource("2_2t34u")
+selfRigidBody = NodePath("..")
+UnPickWheelPos = -0.6
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

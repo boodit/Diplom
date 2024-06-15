@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="lesson" load_steps=2 format=3 uid="uid://cke5tmhjpo7q8"]
+
+[ext_resource type="Script" path="res://Scripts/Lesson.gd" id="1_gb7vt"]
+
+[resource]
+script = ExtResource("1_gb7vt")
+label1 = "1)"
+label2 = "2)"
+label3 = "3)"
+label4 = "4)"
+label5 = "5)"
+label6 = "6)"
+label7 = "7)"
+label8 = "8)dw"

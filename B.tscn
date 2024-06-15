@@ -1,0 +1,159 @@
+[gd_scene load_steps=20 format=3 uid="uid://dggbmd3173qah"]
+
+[ext_resource type="Script" path="res://Cams.gd" id="1_gcfh7"]
+[ext_resource type="Script" path="res://Scripts/Camera3D.gd" id="1_tm21r"]
+[ext_resource type="Script" path="res://Scripts/Camera3D1.gd" id="2_4w8bt"]
+[ext_resource type="PackedScene" uid="uid://bbemhudcged7c" path="res://A.tscn" id="2_ot5sm"]
+[ext_resource type="PackedScene" uid="uid://b10av2v46lkum" path="res://pipetka.tscn" id="4_538qt"]
+[ext_resource type="PackedScene" uid="uid://b6cbcno43nfj2" path="res://sponge.tscn" id="6_ypia5"]
+[ext_resource type="PackedScene" uid="uid://fg436442e2ec" path="res://vesi.tscn" id="7_3px3p"]
+[ext_resource type="PackedScene" uid="uid://dp6us27y6amp0" path="res://stakan.tscn" id="7_5w5iw"]
+[ext_resource type="PackedScene" uid="uid://cdah8jtbnbq5o" path="res://paper.tscn" id="9_g4fp5"]
+[ext_resource type="Script" path="res://Scripts/Termometr.gd" id="10_tmkyl"]
+[ext_resource type="Script" path="res://Scripts/PickScript.gd" id="11_1bpkl"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dp45o"]
+sky_top_color = Color(0.694042, 0.83745, 1, 1)
+sky_horizon_color = Color(0.723511, 0.751613, 0.78325, 1)
+ground_horizon_color = Color(0.723511, 0.751613, 0.78325, 1)
+
+[sub_resource type="Sky" id="Sky_ais37"]
+sky_material = SubResource("ProceduralSkyMaterial_dp45o")
+
+[sub_resource type="Environment" id="Environment_e2nyy"]
+background_mode = 2
+sky = SubResource("Sky_ais37")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_0ms3s"]
+radius = 0.03
+
+[sub_resource type="BoxMesh" id="BoxMesh_7bwfp"]
+size = Vector3(1, 0.5, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5fr0h"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_t2t8c"]
+viewport_path = NodePath("Termometr/MeshInstance3D2/Sprite3D/SubViewport")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uhprb"]
+size = Vector3(0.599182, 2.1272, 0.2)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_e2nyy")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_energy = 0.6
+shadow_enabled = true
+
+[node name="Cams" type="Node3D" parent="." node_paths=PackedStringArray("cam1", "cam2")]
+script = ExtResource("1_gcfh7")
+cam1 = NodePath("Cam1/Camera3D")
+cam2 = NodePath("Cam2/Camera3D")
+
+[node name="Cam1" type="Node3D" parent="Cams"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.59168, 19.1739, -6.90333)
+script = ExtResource("1_tm21r")
+
+[node name="Camera3D" type="Camera3D" parent="Cams/Cam1"]
+transform = Transform3D(-1, 4.37115e-08, -7.57103e-08, 2.57307e-08, 0.974827, 0.222961, 8.35505e-08, 0.222961, -0.974827, 0, 0, 0)
+current = true
+script = ExtResource("2_4w8bt")
+
+[node name="Cam2" type="Node3D" parent="Cams"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.4857, 19.1739, -21.5244)
+script = ExtResource("1_tm21r")
+inverse = true
+
+[node name="Camera3D" type="Camera3D" parent="Cams/Cam2"]
+transform = Transform3D(-1, 2.21536e-08, -9.32599e-08, -5.48887e-08, 0.665282, 0.746592, 7.85839e-08, 0.746592, -0.665282, 0, 0, 0)
+script = ExtResource("2_4w8bt")
+
+[node name="RootNode" parent="." instance=ExtResource("2_ot5sm")]
+
+[node name="Pipetka" parent="." instance=ExtResource("4_538qt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.55991, 14.9517, 5.8269)
+max_contacts_reported = 10
+contact_monitor = true
+
+[node name="Sponge" parent="." instance=ExtResource("6_ypia5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.784149, 13.985, -1.37493)
+
+[node name="Vesi" parent="." instance=ExtResource("7_3px3p")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8.52633, 14.3793, 4.12128)
+
+[node name="Stakan" parent="." instance=ExtResource("7_5w5iw")]
+transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 4.89612, 15.8446, 2.59507)
+
+[node name="Paper" parent="." instance=ExtResource("9_g4fp5")]
+
+[node name="Termometr" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.57229, 16.0421, 2.3066)
+collision_layer = 6
+collision_mask = 6
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("10_tmkyl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Termometr"]
+mesh = SubResource("CapsuleMesh_0ms3s")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Termometr"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.554211, 0, 0)
+mesh = SubResource("CapsuleMesh_0ms3s")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Termometr"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.272318, 1.06348, 0)
+mesh = SubResource("BoxMesh_7bwfp")
+surface_material_override/0 = SubResource("StandardMaterial3D_5fr0h")
+
+[node name="Sprite3D" type="Sprite3D" parent="Termometr/MeshInstance3D2"]
+transform = Transform3D(0.193805, 0, 0, 0, 0.165153, 0, 0, 0, 1, 0, 0, -0.102032)
+flip_h = true
+texture = SubResource("ViewportTexture_t2t8c")
+
+[node name="SubViewport" type="SubViewport" parent="Termometr/MeshInstance3D2/Sprite3D"]
+transparent_bg = true
+
+[node name="LabelTemperarture" type="Label" parent="Termometr/MeshInstance3D2/Sprite3D/SubViewport"]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 126
+text = "00.00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite3D2" type="Sprite3D" parent="Termometr/MeshInstance3D2"]
+transform = Transform3D(0.193805, 0, 0, 0, 0.165153, 0, 0, 0, 1, 0, 0, 0.100199)
+texture = SubResource("ViewportTexture_t2t8c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Termometr"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.271983, 0.116583, 0)
+shape = SubResource("BoxShape3D_uhprb")
+
+[node name="Area3D" type="Area3D" parent="Termometr"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Termometr/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.271983, 0.116583, 0)
+shape = SubResource("BoxShape3D_uhprb")
+
+[node name="Node" type="Node" parent="Termometr" node_paths=PackedStringArray("selfRigidBody")]
+script = ExtResource("11_1bpkl")
+selfRigidBody = NodePath("..")
+
+[connection signal="area_entered" from="Termometr/Area3D" to="Termometr" method="_on_area_3d_area_entered"]
+[connection signal="area_exited" from="Termometr/Area3D" to="Termometr" method="_on_area_3d_area_exited"]
