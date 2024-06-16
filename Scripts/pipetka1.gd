@@ -2,7 +2,7 @@ extends RigidBody3D
 var pick:bool =false
 signal pickedSignal(pickSignal)
 @onready var marker_3d = $Marker3D
-const KAPLYA = preload("res://kaplya.tscn")
+const KAPLYA = preload("res://Scene/kaplya.tscn")
 
 func _ready():
 	pickedSignal.connect(picked)

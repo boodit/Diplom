@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dg3xaux07iq84"
-path="res://.godot/imported/vesiCH.fbx-451b935cc7c5d85b369390fd49789ab9.scn"
+uid="uid://be71pgecm1kcr"
+path="res://.godot/imported/sharik.fbx-67628f9acb87b6161be290de78bff369.scn"
 
 [deps]
 
-source_file="res://vesiCH.fbx"
-dest_files=["res://.godot/imported/vesiCH.fbx-451b935cc7c5d85b369390fd49789ab9.scn"]
+source_file="res://Scene/sharik.fbx"
+dest_files=["res://.godot/imported/sharik.fbx-67628f9acb87b6161be290de78bff369.scn"]
 
 [params]
 
@@ -30,10 +30,16 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
-"nodes": {
-"PATH:RootNode/vesi_chashi": {
-"generate/physics": true,
-"physics/shape_type": 2
+"meshes": {
+"Root Scene_Sphere": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://A.res"
 }
 }
 }

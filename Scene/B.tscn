@@ -1,18 +1,16 @@
-[gd_scene load_steps=22 format=3 uid="uid://dggbmd3173qah"]
+[gd_scene load_steps=20 format=3 uid="uid://dggbmd3173qah"]
 
-[ext_resource type="Script" path="res://Cams.gd" id="1_gcfh7"]
+[ext_resource type="Script" path="res://Scripts/Cams.gd" id="1_gcfh7"]
 [ext_resource type="Script" path="res://Scripts/Camera3D.gd" id="1_tm21r"]
 [ext_resource type="Script" path="res://Scripts/Camera3D1.gd" id="2_4w8bt"]
-[ext_resource type="PackedScene" uid="uid://bbemhudcged7c" path="res://A.tscn" id="2_ot5sm"]
-[ext_resource type="PackedScene" uid="uid://b10av2v46lkum" path="res://pipetka.tscn" id="4_538qt"]
-[ext_resource type="PackedScene" uid="uid://b6cbcno43nfj2" path="res://sponge.tscn" id="6_ypia5"]
-[ext_resource type="PackedScene" uid="uid://fg436442e2ec" path="res://vesi.tscn" id="7_3px3p"]
-[ext_resource type="PackedScene" uid="uid://dp6us27y6amp0" path="res://stakan.tscn" id="7_5w5iw"]
-[ext_resource type="PackedScene" uid="uid://cdah8jtbnbq5o" path="res://paper.tscn" id="9_g4fp5"]
+[ext_resource type="PackedScene" uid="uid://bbemhudcged7c" path="res://Scene/A.tscn" id="2_ot5sm"]
+[ext_resource type="PackedScene" uid="uid://b10av2v46lkum" path="res://Scene/pipetka.tscn" id="4_538qt"]
+[ext_resource type="PackedScene" uid="uid://b6cbcno43nfj2" path="res://Scene/sponge.tscn" id="6_ypia5"]
+[ext_resource type="PackedScene" uid="uid://fg436442e2ec" path="res://Scene/vesi.tscn" id="7_3px3p"]
+[ext_resource type="PackedScene" uid="uid://dp6us27y6amp0" path="res://Scene/stakan.tscn" id="7_5w5iw"]
+[ext_resource type="PackedScene" uid="uid://cdah8jtbnbq5o" path="res://Scene/paper.tscn" id="9_g4fp5"]
 [ext_resource type="Script" path="res://Scripts/Termometr.gd" id="10_tmkyl"]
 [ext_resource type="Script" path="res://Scripts/PickScript.gd" id="11_1bpkl"]
-[ext_resource type="Script" path="res://PauseMenu.gd" id="12_6rfpl"]
-[ext_resource type="PackedScene" uid="uid://ddh3wj4abvofi" path="res://pause_menu.tscn" id="13_e4s2c"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dp45o"]
 sky_top_color = Color(0.694042, 0.83745, 1, 1)
@@ -42,10 +40,6 @@ viewport_path = NodePath("Termometr/MeshInstance3D2/Sprite3D/SubViewport")
 size = Vector3(0.599182, 2.1272, 0.2)
 
 [node name="Node3D" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.35607, -2.12076, 1.05102)
-
-[node name="PauseMenu" type="Node" parent="."]
-script = ExtResource("12_6rfpl")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_e2nyy")
@@ -59,10 +53,6 @@ shadow_enabled = true
 script = ExtResource("1_gcfh7")
 cam1 = NodePath("Cam1/Camera3D")
 cam2 = NodePath("Cam2/Camera3D")
-
-[node name="Pause_menu" parent="Cams" instance=ExtResource("13_e4s2c")]
-visible = false
-metadata/_edit_use_anchors_ = true
 
 [node name="Cam1" type="Node3D" parent="Cams"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.59168, 19.1739, -6.90333)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://fg436442e2ec"]
 
-[ext_resource type="PackedScene" uid="uid://d21o78yotrxsw" path="res://aaa.tscn" id="1_hq4br"]
+[ext_resource type="PackedScene" uid="uid://d21o78yotrxsw" path="res://Scene/aaa.tscn" id="1_hq4br"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ttv44"]
 resource_name = "DefaultMaterial"
