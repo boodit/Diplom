@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch8g7r7uiimni"]
+
+[ext_resource type="PackedScene" uid="uid://i0wv5naapef" path="res://options_screen_button.tscn" id="1_66ctl"]
+[ext_resource type="Script" path="res://window_mode_button.gd" id="2_48018"]
+
+[node name="Window_mode_button" instance=ExtResource("1_66ctl")]
+script = ExtResource("2_48018")
+
+[node name="HBoxContainer" parent="." index="0"]
+alignment = 1

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmvcl2mftcq5p"]
+
+[ext_resource type="PackedScene" uid="uid://i0wv5naapef" path="res://options_screen_button.tscn" id="1_q3dn4"]
+[ext_resource type="Script" path="res://options_resolution_button.gd" id="2_htvqt"]
+
+[node name="Options_resolution_button" instance=ExtResource("1_q3dn4")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+size_flags_horizontal = 4
+script = ExtResource("2_htvqt")
+
+[node name="HBoxContainer" parent="." index="0"]
+theme_override_constants/separation = 0
