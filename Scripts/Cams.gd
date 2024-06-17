@@ -2,6 +2,7 @@ extends Node3D
 @export var cam1 : Camera3D
 @export var cam2 : Camera3D
 
+
 func _input(event):
 	if event.is_action_released("camSwitch"):
 		if cam1.current:

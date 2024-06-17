@@ -64,3 +64,5 @@ func _on_body_entered(body):
 func _on_body_exited(body):
 	coll = null
 
+func is_pick() -> bool :
+	return pick
