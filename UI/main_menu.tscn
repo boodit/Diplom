@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bx1r18xc5lxy3"]
 
 [ext_resource type="Script" path="res://UI/main_menu.gd" id="1_63pgl"]
-[ext_resource type="AudioStream" uid="uid://o3gflfgijs1e" path="res://Assets/music/ozon671games1.mp3" id="2_ddxol"]
+[ext_resource type="AudioStream" uid="uid://duugxsymh0x5c" path="res://Assets/SFX/mixkit-cool-interface-click-tone-2568.wav" id="2_8kxob"]
 
 [sub_resource type="SystemFont" id="SystemFont_rocdg"]
 font_names = PackedStringArray("Impact")
@@ -57,10 +57,12 @@ theme_override_font_sizes/font_size = 48
 text = "Выход"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_ddxol")
+stream = ExtResource("2_8kxob")
 volume_db = -20.0
-autoplay = true
 
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Start" to="." method="_on_start_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

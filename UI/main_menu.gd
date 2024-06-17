@@ -1,4 +1,5 @@
 extends Control
+@onready var audio_stream_player = $AudioStreamPlayer
 
 
 
@@ -13,12 +14,13 @@ func _on_options_pressed():
 func _on_quit_pressed():
 	get_tree().quit()
 
+func _on_start_mouse_entered():
+	audio_stream_player.play()
 
 
+func _on_options_mouse_entered():
+	audio_stream_player.play()
 
 
-
-
-
-
-
+func _on_quit_mouse_entered():
+	audio_stream_player.play()

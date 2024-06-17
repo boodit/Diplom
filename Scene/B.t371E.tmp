@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dggbmd3173qah"]
+[gd_scene load_steps=23 format=3 uid="uid://dggbmd3173qah"]
 
 [ext_resource type="Script" path="res://Scripts/Cams.gd" id="1_gcfh7"]
 [ext_resource type="Script" path="res://Scripts/Camera3D.gd" id="1_tm21r"]
@@ -43,10 +43,6 @@ size = Vector3(0.599182, 2.1272, 0.2)
 
 [sub_resource type="SystemFont" id="SystemFont_8i0ra"]
 font_names = PackedStringArray("Impact")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_hryoh"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_dsstt"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -203,9 +199,6 @@ theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
-[node name="Panel" type="Panel" parent="Control/MarginContainer"]
-layout_mode = 2
-
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -223,47 +216,13 @@ text = "Продолжить
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_8i0ra")
 theme_override_font_sizes/font_size = 48
-text = "Меню"
+text = "Настройки"
 
 [node name="Quit" type="Button" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_8i0ra")
 theme_override_font_sizes/font_size = 48
 text = "Выход"
-
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.68814, 14.4961, -27.9764)
-collision_layer = 6
-collision_mask = 6
-freeze = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-shape = SubResource("BoxShape3D_hryoh")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D/CollisionShape3D"]
-mesh = SubResource("BoxMesh_dsstt")
-
-[node name="Node" type="Node" parent="RigidBody3D" node_paths=PackedStringArray("selfRigidBody")]
-script = ExtResource("11_1bpkl")
-selfRigidBody = NodePath("..")
-UnPickWheelPos = -0.4
-
-[node name="RigidBody3D2" type="RigidBody3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.69954, 14.4961, -27.9764)
-collision_layer = 6
-collision_mask = 6
-freeze = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D2"]
-shape = SubResource("BoxShape3D_hryoh")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D2/CollisionShape3D"]
-mesh = SubResource("BoxMesh_dsstt")
-
-[node name="Node" type="Node" parent="RigidBody3D2" node_paths=PackedStringArray("selfRigidBody")]
-script = ExtResource("11_1bpkl")
-selfRigidBody = NodePath("..")
-UnPickWheelPos = -0.4
 
 [connection signal="area_entered" from="Termometr/Area3D" to="Termometr" method="_on_area_3d_area_entered"]
 [connection signal="area_exited" from="Termometr/Area3D" to="Termometr" method="_on_area_3d_area_exited"]

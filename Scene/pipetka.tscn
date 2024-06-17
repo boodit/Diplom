@@ -72,6 +72,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.84176, 0)
 [node name="PickNode" type="Node" parent="." node_paths=PackedStringArray("selfRigidBody")]
 script = ExtResource("2_72yjy")
 selfRigidBody = NodePath("..")
+UnPickWheelPos = 0.3
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

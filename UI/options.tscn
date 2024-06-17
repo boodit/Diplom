@@ -17,11 +17,18 @@ grow_vertical = 2
 script = ExtResource("1_i2yc8")
 
 [node name="TabContainer" type="TabContainer" parent="."]
-layout_mode = 0
-offset_left = 83.0
-offset_top = 54.0
-offset_right = 1079.0
-offset_bottom = 535.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -498.0
+offset_top = -240.5
+offset_right = 498.0
+offset_bottom = 240.5
+grow_horizontal = 2
+grow_vertical = 2
 current_tab = 1
 
 [node name="Звук" type="TabBar" parent="TabContainer"]
@@ -33,9 +40,9 @@ layout_mode = 2
 
 [node name="Resolution_Button" parent="TabContainer/Экран" instance=ExtResource("2_f76e0")]
 layout_mode = 1
-offset_left = -16.0
-offset_top = -21.0
-offset_right = -42.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = -40.0
 offset_bottom = -21.0
 
 [node name="Window_Mode_Button" parent="TabContainer/Экран" instance=ExtResource("3_efgwr")]
@@ -56,19 +63,19 @@ layout_mode = 2
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.971
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.971
-offset_left = -108.0
-offset_top = -73.2081
-offset_right = 111.0
-offset_bottom = -15.2081
+anchor_bottom = 1.0
+offset_left = -109.0
+offset_top = -68.0
+offset_right = 110.0
+offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = SubResource("SystemFont_0tium")
 theme_override_font_sizes/font_size = 40
-text = "назад"
+text = "Назад"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
