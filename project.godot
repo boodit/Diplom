@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="Aga"
-run/main_scene="res://Scene/B.tscn"
+run/main_scene="res://UI/main_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalScreept="*res://Scripts/GlobalScript.gd"
+GlobalScript="*res://Scripts/GlobalScript.gd"
 
 [input]
 

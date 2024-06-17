@@ -1,12 +1,6 @@
 extends Node
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+@onready var start_level = preload("res://Scene/B.tscn") as PackedScene
+@onready var options_level = preload("res://UI/options.tscn") as PackedScene 
+@onready var Main_menu = preload("res://UI/main_menu.tscn") as PackedScene
 

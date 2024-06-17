@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bjeebi8lxt04s"
+path="res://.godot/imported/u dont even smile1.mp3-b16ab1ef64d8c98e3e3645725c6c7dec.mp3str"
+
+[deps]
+
+source_file="res://Assets/music/u dont even smile1.mp3"
+dest_files=["res://.godot/imported/u dont even smile1.mp3-b16ab1ef64d8c98e3e3645725c6c7dec.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
